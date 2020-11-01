@@ -90,6 +90,20 @@ def colony6(savefile, add):
             print("{:3}  '{}'".format(value, AllItems[myCategoryName]['list'][key]))
     writeItems(savefile,myItems)
 
+def checkGemEffect(filter):
+    """Checks if provided gem by its effect name is valid and, if so, returns its index from Effect dictionary, or None is invalid"""
+    validGem = None  # Provided gem, by its effect name, is not valid at first glance
+    if filter in AllGems['Effect'].values():
+        print("'{}' is a valid gem effect name.".format(filter))
+        for gemEffectIndex, gemEffectName in AllGems['Effect'].items():  # Looking for the proper gem
+            if filter in gemEffectName:
+                if debug: # show some details (item index)
+                    print('{} gem effect index: {}'.format(gemEffectName,gemEffectIndex))
+                validGem = gemEffectIndex
+    if validGem is None: # this gem filter is not valid, print message
+        print("'{}' is not a valid gem effect name. Aborting.".format(filter))
+    return validGem
+
 def gems(savefile):
     with open(savefile, 'r+b') as f:
         myGems = []

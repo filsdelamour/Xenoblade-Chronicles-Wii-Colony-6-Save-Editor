@@ -1877,3 +1877,6 @@ Colony6 = {
 AllItems = {'Collectable':{'list':Collectable,'maxSlots':300,'backupStart':0x22118,'maxNb':99},
             'Material':{'list':Material,'maxSlots':150,'backupStart':0x22a78,'maxNb':99},
             'KeyItem':{'list':KeyItem,'maxSlots':300,'backupStart':0x233d8,'maxNb':1}}
+
+# One dictionary to collect all information about gems
+AllGems = {'Gem':Gem,'Effect':Effect,'Level':GemLvl,'Element':Element}
